@@ -1,0 +1,264 @@
+/* vars */
+
+@font-face {
+    font-family: "Rubik-Regular";
+    src: url('./fonts/Rubik/Rubik-Regular.woff') format('woff')
+}
+
+@font-face {
+    font-family: "Santello";
+    src: url("https://db.onlinewebfonts.com/t/a3dd14b0016c8c4288002bbe7b23d782.woff")format("woff")
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Santello", serif;
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text_color-end);
+    transition: .25s ease-in-out;
+}
+
+a:hover {
+    color: var(--accent-hight-green);
+}
+
+:root {
+    --accent-light-green: #33CC33;
+    --accent-midle-green: #009833;
+    --accent-hight-green: #006E3A;
+    --text_color: #004033;
+    --text_color-end: #222;
+}
+
+h2  {
+    font-size: 34px;
+    color: var(--accent-hight-green);
+    margin-bottom: 50px;
+}
+
+h3  {
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* --end vars */
+
+/* header */
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 75px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 18px 31px -5px rgba(0, 0, 0, 0.06);
+}
+
+.logo__img {
+    width: 10rem;
+    margin-left: -20px;
+}
+
+.header__menu, .header__social {
+    font-family: "Santello", serif;
+}
+
+.header__menu {
+    display: flex;
+}
+
+.header__navigation {
+    display: inline-flex;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+
+.header__navigation--item {
+    padding: 0px 20px 0px 20px;
+}
+
+.header__social {
+    font-size: 18px;
+}
+
+.header__social--item {
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.header__social--item i {
+    padding-right: 5px;
+}
+
+/* wrapper */
+
+.wrapper {
+    margin-top: 75px;
+    height: 100%;
+}
+
+.wrapper__container--fullBackground {
+    background: rgba(0, 0, 0, 0.02) url("/images/banner5.png") no-repeat right center;
+    -webkit-background-size: 60%;
+    background-size: 60%;
+}
+
+.block__title {
+    font-family: "Santello", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 650px;
+    color: #222222;
+}
+
+.top__title {
+    width: 560px;
+}
+
+.top__title h1 {
+    font-size: 44px;
+    color: var(--accent-hight-green);
+}
+
+.top__title p {
+    line-height: 1.4;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.top__title button {
+    width: fit-content;
+    height: 50px;
+    padding: 10px;
+    border-radius: 3px;
+    background: rgb(0, 104, 56) linear-gradient(13deg, rgba(0, 104, 56, 1) 0%, rgba(0, 147, 69, 1) 20%, rgba(161, 205, 59, 1) 60%);
+    background-size: 200% 100%;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.top__title button:hover {
+    animation: animateBg 2s infinite ease-in-out;
+}
+
+/* aboutMe */
+
+.wrapper__container--pain, .wrapper__container--decision, .wrapper__container--about{
+    height: fit-content;
+    padding-top: 80px;
+    line-height: 1.4;
+    padding-bottom: 80px;
+}
+
+.color__span {
+    background: var(--accent-hight-green);
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+}
+
+.wrapper__container--decision {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.about__text {
+    padding-bottom: 30px;
+}
+
+.items__grid {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+}
+
+.items__grid--item {
+    width: 100%;
+    border-radius: 10px;
+    background: rgb(0, 104, 56) linear-gradient(13deg, rgba(0, 104, 56, 1) 0%, rgba(0, 147, 69, 1) 20%, rgba(161, 205, 59, 1) 100%);
+    cursor: pointer;
+    color: #fff;
+    padding: 20px;
+    box-shadow: -1px 4px 14px 2px rgba(34, 60, 80, 0.2);
+}
+
+.items__grid--item  p{
+    font-size: 14px;
+}
+
+.items__grid--item span {
+    font-size: 15px;
+    width: 100%;
+    display: block;
+    /* float: right; */
+    text-align: right;
+}
+
+.track__section {
+    padding-top: 60px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+    text-align: center;
+}
+
+.track__section--item .number {
+    color: var(--accent-hight-green);
+    font-size: 44px;
+}
+
+.track__section--item p {
+
+    font-size: 16px;
+}
